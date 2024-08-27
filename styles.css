@@ -1,0 +1,133 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/img/default.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    padding: 20px;
+    text-align: center;
+    color: rgb(244, 244, 246);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap; /* Permite que os cards quebrem linha em telas menores */
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 220px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card p {
+    padding: 10px 0;
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* Media Query para telas menores que 730px */
+@media (max-width: 730px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-container {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Media Query para telas menores que 480px */
+@media (max-width: 480px) {
+    .card img {
+        height: 80px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+/* Ajuste para telas maiores que 730px para evitar distorção */
+@media (min-width: 730px) {
+    body {
+        background-size: contain;
+    }
+}

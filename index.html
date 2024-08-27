@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moments of the Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <center><h1>Moments of the Day</h1></center>
+    </header>
+    <main>
+        <div class="content">
+            <div class="card-container left">
+                <div class="card" onclick="changeBackground('/img/default.jpg')">
+                    <img src="/img/default.jpg" alt="Default">
+                    <p>Default</p>
+                </div>
+                <div class="card" onclick="changeBackground('/img/dawn.png')">
+                    <img src="/img/dawn.png" alt="Amanhecer">
+                    <p>Dawn</p>
+                </div>
+                <div class="card" onclick="changeBackground('/img/morning.png')">
+                    <img src="/img/morning.png" alt="Morning">
+                    <p>Morning</p>
+                </div>
+            </div>
+            <div class="card-container right">
+                <div class="card" onclick="changeBackground('/img/afternoon.png')">
+                    <img src="/img/afternoon.png" alt="Afternoon">
+                    <p>Afternoon</p>
+                </div>
+                <div class="card" onclick="changeBackground('/img/sunset.png')">
+                    <img src="/img/sunset.png" alt="Sunset">
+                    <p>Sunset</p>
+                </div>
+                <div class="card" onclick="changeBackground('/img/night.png')">
+                    <img src="/img/night.png" alt="Night">
+                    <p>Night</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
